@@ -7,6 +7,7 @@ public class GumballMachine {
  
  int state = SOLD_OUT;
  int count = 0;
+ 
  public GumballMachine(int count) {
 	 this.count = count;
 	 if(count>0){
@@ -65,6 +66,20 @@ public class GumballMachine {
 	 }else if(state == HAS_QUARTER){
 		 System.out.println("No gumball dispensed");
 	 }
+ }
+ public String toString(){
+	 String status = "Gumball Machine";
+	 if(state == HAS_QUARTER){
+		 status = status + "\n status HAS QUARTER";
+	 }else if(state == NO_QUARTER){
+		 status = status + "\n status NO QUARTER";
+	 }else if(state == SOLD){
+		 status = status + "\n status SOLD";
+	 }else if(state == SOLD_OUT){
+		 status = status + "\n status NO QUARTER"; 
+	 }
+	 status = status + "\n count : "+this.count; 
+	 return status;
  }
  //other methods here like toString() and refill()
 }
